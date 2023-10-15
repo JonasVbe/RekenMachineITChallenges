@@ -46,7 +46,7 @@ jobs:
 
       - name: Run Unit Tests
         run: dotnet test --configuration Release --no-restore
-        working-directory: ${{env.DOTNET_ROOT}}/myapp
+       
           
 
   deploy:
