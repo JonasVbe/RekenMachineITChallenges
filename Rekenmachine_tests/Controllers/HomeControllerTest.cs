@@ -12,7 +12,7 @@ namespace Rekenmachine_tests.Controllers
     [TestFixture]
     public class HomeControllerTests
     {
-        [TestCase(2, 3, "optellen", 6)]
+        [TestCase(2, 3, "optellen", 5)]
         [TestCase(5, 3, "aftrekken", 2)]
         [TestCase(4, 5, "vermenigvuldigen", 20)]
         [TestCase(6, 2, "delen", 3)]
