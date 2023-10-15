@@ -45,7 +45,9 @@ jobs:
           name: .net-app
 
       - name: Run Unit Tests
-        run:  dotnet test ./rekenmachineITchallenges/rekenmachine_test/rekenmachine_test.csproj --configuration Release --no-restore
+        run:  dotnet test ./RekenMachineITChallenges\Rekenmachine_tests/rekenmachine_test.csproj --configuration Release --no-restore
+
+    
 
        
           
