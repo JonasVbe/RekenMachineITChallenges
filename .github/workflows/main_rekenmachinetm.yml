@@ -48,7 +48,8 @@ jobs:
           include-prerelease: true
 
       - name: Run Unit Tests
-        run: dotnet test --configuration Release --no-restore
+        run: dotnet test ./RekenMachineITChallenges --configuration Release --no-restore
+        
 
   deploy:
     runs-on: windows-latest
