@@ -45,8 +45,8 @@ jobs:
           name: .net-app
 
       - name: Run Unit Tests
-        run:  dotnet test --collect "Code coverage"
-        working-directory: ${{env.DOTNET_ROOT}}/myapp
+        run:  dotnet test --configuration '${{ env.BUILD_CONFIGURATION }}'
+        
         
 
     
@@ -75,3 +75,5 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_31F4CD4CEDA94DCF86C645B50C89DC5B }}
           package: .
+
+          
