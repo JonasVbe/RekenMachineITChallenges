@@ -11,6 +11,32 @@ namespace Rekenmachine.Controllers
             return View();
         }
 
+        public IActionResult Boete()
+        {
+            return View();
+        }
+
+        [HttpPost("Boete")]
+        public IActionResult Boete(int snelheid)
+        {
+            double boeteBedrag = 0;
+            string resultaat = "Proficiat, u bent een van de weinige die niet te hard rijdt!";
+
+            if (snelheid > 50)
+            {
+                boeteBedrag = 125;
+                for (int i = snelheid; i > 50; i--)
+                {
+                    boeteBedrag += 25;
+                }
+                resultaat = $"Foei, u krijgt een boete van €{boeteBedrag}";
+            }
+
+            ViewData["BoeteResultaat"] = resultaat;
+
+            return View();
+        }
+
         public IActionResult Bereken()
         {
             return View();
@@ -26,12 +52,15 @@ namespace Rekenmachine.Controllers
                 case "optellen":
                     resultaat = num1 + num2;
                     break;
+
                 case "aftrekken":
                     resultaat = num1 - num2;
                     break;
+
                 case "vermenigvuldigen":
                     resultaat = num1 * num2;
                     break;
+
                 case "delen":
                     if (num2 != 0)
                         resultaat = num1 / num2;
@@ -43,8 +72,8 @@ namespace Rekenmachine.Controllers
             ViewData["Resultaat"] = resultaat;
 
             return View();
-
         }
+
         public IActionResult NaamOmgekeerd()
         {
             return View();
@@ -59,8 +88,5 @@ namespace Rekenmachine.Controllers
             ViewData["OmgekeerdeNaam"] = omgekeerdeNaam;
             return View();
         }
-
-
     }
-
 }
